@@ -13,8 +13,14 @@ const max = 10;
   
 //inserire i numeri all'interno di un array vuoto
 
-//inserire i numeri dell'array all'interno di un alert
+do{
+  numeri = numeriCasuali.push(getRandomInt(min,max))
+}
+while(numeriCasuali.length < 5)
+console.log( numeriCasuali)
 
+//inserire i numeri dell'array all'interno di un alert
+alert(`memorizza questi cinque numeri: ${numeriCasuali.join(", ")}`)
 //generare un timer per inserire i numeri 
  //alla fine del timer deve inserire i numeri con dei prompt uno alla volta
 //comunicare quali e quanti numeri sono giusti
