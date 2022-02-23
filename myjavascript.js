@@ -2,6 +2,7 @@
 //creare un array vuoto
 let numeriCasuali = [];
 let numeriUtente = [];
+let numeriCorretti = [];
   //fare una funzione che generi numeri casuali
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -15,7 +16,12 @@ const max = 10;
 //inserire i numeri all'interno di un array vuoto
 
 do{
-  numeri = numeriCasuali.push(getRandomInt(min,max))
+  numeri = getRandomInt(min,max)
+
+  if(numeriCasuali.includes(numeri) === false){
+    numeriCasuali.push(numeri)
+  }
+  
 }
 while(numeriCasuali.length < 5)
 //console.log( numeriCasuali)
@@ -30,21 +36,14 @@ setTimeout(() => {
 
     const num = parseInt(prompt(`inserisci un numero da ${ min } a ${ max }`))
     numeriUtente.push( num )
+    //comunicare quali e quanti numeri sono giusti
+    if(numeriCasuali.includes(num) && !numeriCorretti.includes(num)){
+      numeriCorretti.push(num)
+    }
 
   } while(numeriUtente.length < numeriCasuali.length)
 
-}, 2000);
- 
-//comunicare quali e quanti numeri sono giusti
+}, 30000);
 
 
-
-
-
-
-/*
-
-let numberAlert1 = getRandomInt( 1, 10 )
-console.log( numberAlert )
-
-const messaggio = alert(numberAlert)*/
+console.log(numeriCorretti)
